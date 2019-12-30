@@ -1,0 +1,110 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+        
+        <style>
+        
+        .w3-allerta {
+      font-family: "Allerta Stencil", Sans-serif;
+    }
+        </style>
+        <style>
+            </style>
+    </head>
+    <body>
+
+ 
+<header class="shadow" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                    
+                     <h1 class="w3-container  w3-center w3-allerta" >Stock Charts</h1>                          
+                    </a>    
+            
+        </div>
+    </nav>
+</header>
+<section class="container">
+    <div class="row m-4">
+        <div class="col" style="height: 70vh;">
+            <form class="pt-4">
+                <div class="card shadow">
+                    <p class="h4 card-header">User Sign-Up Form</p>
+                    <div class="card-body bg-light">
+
+                        <p class="card-text">Details:&nbsp;</p>
+                        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+                            <div class="input-group mt-3 mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Username</span>
+                                </div>
+                                <input type="text" formControlName="username"  [ngClass]="{ 'is-invalid': submitted &&  f.username.errors }" class="form-control" />
+                               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+         <div *ngIf="f.username.errors.required">User name is required</div>
+       <!--  <div *ngIf="f.username.errors.duplicateEmail">User name already in use</div>--> 
+         
+      </div>
+      </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Password</span>
+                                </div>
+                                <input type="password" formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" class="form-control" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback" >
+                            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+         <div *ngIf="f.password.errors.required">Password is required</div>
+         
+      </div></div>
+
+                            <div class="input-group mb-3">
+                                <input type="password" name="reEnterPassword" [ngClass]="{ 'is-invalid': submitted && f.reEnterPassword.errors }" formControlName="reEnterPassword" class="form-control" placeholder="Re-enter Password" />
+                            </div>
+                             <div  *ngIf="submitted && f.password.errors" class="invalid-feedback">
+      <div *ngIf="f.reEnterPassword.errors.required" >
+        Re-enter password is required </div>
+             <div *ngIf="f.reEnterPasswor!=f.password" >
+        Re-enter password must be same to previous enter
+      </div>
+    </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Email</span>
+                                </div>
+                                <input type="email" ng-model="mail" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+                                 <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                  <!-- <div *ngIf="f.email.errors.duplicateEmail">Email address already in use</div> -->
+                        </div>
+                                
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Mobile</span>
+                                </div>
+                                <input type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" maxlength="10"  />
+                                <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                            <div *ngIf="f.mobile.errors.required">Mobile number is required</div>
+                            <div *ngIf="f.mobile.errors.invalidPhone">Mobile number must be a 10-digit number</div>
+                        </div>
+                                
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                            <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                            
+                        </form>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section></body></html>

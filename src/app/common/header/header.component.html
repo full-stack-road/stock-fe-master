@@ -1,0 +1,101 @@
+<html>
+    <head>
+          
+        
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+        
+        <style>
+            
+body{
+  background: url(https://s.yimg.com/ny/api/res/1.2/lC7VXJOIiHOLDd10BIBJfg--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/https://media.zenfs.com/en-us/zacks.com/2f0d6efdd8740952a371c97ddea6e926);
+  background-size: cover;
+}
+
+
+        </style>
+
+    </head>
+    <body>
+
+           
+<header class="shadow" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="  box-shadow: 0 20px 20px -20px rgb(84, 152, 255);">
+        <div class="container">
+                
+            <a class="navbar-brand" >
+                    
+                     <h1 class="w3-container  w3-center w3-allerta" >Stock Charts</h1>
+                            
+                    </a>
+                    
+            <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav mx-auto">
+
+                    <div class="nav-item">
+                        <a class="nav-link" routerLink="/admin/upload">Import Stock Data</a>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      <div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+            aria-controls="dropdown-basic">
+      Manage Company
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+      <li role="menuitem"><a class="dropdown-item" routerLink="/admin/add-company">Add Company</a></li>
+      <li role="menuitem"><a class="dropdown-item" routerLink="/admin/list-company">Update Company</a></li>
+    </ul>
+  </div>
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    
+
+                    <div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+            aria-controls="dropdown-basic">
+     Manage Exchange
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+      <li role="menuitem"><a class="dropdown-item" routerLink="/admin/add-stock-exchange">Add Exchange</a></li>
+      <li role="menuitem"><a class="dropdown-item" routerLink="/admin/list-stock-exchange">List Exchange</a></li>
+    </ul>
+  </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    
+<div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+            aria-controls="dropdown-basic">
+     Manage IPO
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+        role="menu" aria-labelledby="button-basic">
+        <li role="menuitem"><a class="dropdown-item" routerLink="/admin/add-ipo">Add IPO</a></li>
+        <li role="menuitem"><a class="dropdown-item" routerLink="/admin/list-ipo">Update IPO</a></li>
+    </ul>
+  </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   
+                            
+                </div>
+                <div class="navbar-nav">
+                    <div class="nav-item">
+                        <a class="nav-link d-flex" href="">
+                            <i class="fa fa-user mr-2 mt-1"></i>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>   </body>
+</html>

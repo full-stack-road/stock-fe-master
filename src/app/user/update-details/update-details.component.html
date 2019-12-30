@@ -1,0 +1,78 @@
+<section class="container">
+    <div class="row m-4">
+        <div class="col" style="height: 70vh;">
+            <form class="pt-4">
+                <div class="card shadow">
+                    <p class="h4 card-header">Update User</p>
+                    <div class="card-body bg-light">
+
+                        <p class="card-text">Details:&nbsp;</p>
+                        <form (ngSubmit)="onSubmit()" #detailForm="ngForm">
+                            <!-- <br>TODO: remove this username: {{spy.className}} | {{username.valid}} -->
+                            <div class="input-group mt-3 mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Username</span>
+                                </div>
+                                <input #username="ngModel" type="text" class="form-control" name="username"
+                                    [(ngModel)]="user.username" required />
+                            </div>
+                            <!-- <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+                                UserName is required
+                            </div> -->
+                            <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="username.errors.required">
+                                    UserName is required
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Password</span>
+                                </div>
+                                <input type="password" class="form-control" name="password"
+                                    [(ngModel)]="user.password" />
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" name="reenterPassword"
+                                    [(ngModel)]="reenterPassword" placeholder="Re-enter Password" />
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Email</span>
+                                </div>
+                                <input #email="ngModel" type="email" class="form-control" name="email"
+                                    [(ngModel)]="user.email" email />
+                            </div>
+                            <!-- <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                                Not a valid email address
+                            </div> -->
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                                <div *ngIf="email.errors.email">
+                                    Not a valid email address
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Mobile</span>
+                                </div>
+                                <input #mobile="ngModel" type="text" class="form-control" name="mobile"
+                                    [(ngModel)]="user.mobile" pattern="^(\d{1,4}-)?(\d{1,4}-)?\d{7,11}$" />
+                            </div>
+                            <div [hidden]="mobile.valid || mobile.pristine" class="alert alert-danger">
+                                Invalid mobile number,example:xxx-xxx-xxxxxxx
+                            </div>
+                            <hr>
+                            <button type="submit" class="btn btn-success"
+                                [disabled]="!detailForm.form.valid">Submit</button>
+                            <button type="reset" class="btn btn-danger ml-2" (click)="detailForm.reset()">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

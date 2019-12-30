@@ -1,0 +1,63 @@
+<html>
+    <head>
+    <style>
+  
+
+    </style>
+</head>
+<div class="qw">
+
+<div class="card shadow">
+    <p class="h4 card-header">List of Companies</p>
+    <div class="card-body bg-light">
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+        <table class="table table-borderless table-hover">
+            <thead>
+                <tr class="">
+                    <th scope="col">Company Stock code</th>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Turnover</th>
+                    <th scope="col">CEO</th>
+                    <th scope="col">Board of Directors</th>
+                    <th scope="col">Stock Exchange</th>
+                    <th scope="col">Sector</th>
+                    <th scope="col">Brief writeup</th>
+                    <th scope="col">Contact Number</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                    <div class="firefly"></div>
+                    <div class="firefly"></div>
+                    <div class="firefly"></div>
+                    <div class="firefly"></div>
+                    <div class="firefly"></div>
+                    <div class="firefly"></div>
+                    <div class="firefly"></div>
+                    <div class="firefly"></div>
+                    <tr *ngFor="let result of results">
+                        <td>{{ result.companyCode }}</td>
+                        <td>{{ result.companyName }}</td>
+                        <td>{{ result.turnover }}</td>
+                        <td>{{ result.ceo  }}</td>
+                        <td>{{ result.directors }}</td>
+                        <td>{{ result.stockExchangesId }}</td>
+                        <td>{{ result.sectorName }}</td>
+                        <td>{{ result.brief }}</td>
+                        <td>{{ result.contactNumber }}</td>
+                        <td><a (click)="updateCompany(result)" class="btn btn-primary" role="button">Update</a></td>
+                    </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</div>
+</html>

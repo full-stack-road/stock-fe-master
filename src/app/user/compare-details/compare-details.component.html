@@ -1,0 +1,94 @@
+<section class="container">
+    <div class="row m-4">
+        <div class="col" style="height: 70vh;">
+            <form class="pt-4">
+                <div class="card shadow">
+                    <p class="h4 card-header">Compare</p>
+                    <div class="card-body bg-light" [ngSwitch]="switch">
+
+                        <!-- <p class="card-text">Select:&nbsp;</p> -->
+                        <form (ngSubmit)="onSubmit()" #compareForm="ngForm" *ngSwitchCase="true">
+
+                            <div class="input-group mt-3 mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Company/Sector</span>
+                                </div>
+                                <select class="form-control" name="companyOrSector"
+                                    [(ngModel)]="mapParamaters.companyOrSector">
+                                    <option value="Company">Company</option>
+                                    <option value="Sector">Sector</option>
+                                </select>
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Stock Exchange</span>
+                                </div>
+                                <select class="form-control" name="bseOrNse" [(ngModel)]="mapParamaters.bseOrNse">
+                                    <option value="BSE">BSE</option>
+                                    <option value="NSE">NSE</option>
+                                </select>
+
+                            </div>
+
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        Company Name
+                                    </span>
+                                </div>
+                                <input #searchInput type="text" class="form-control" name="companyName"
+                                    autocomplete="off" [(ngModel)]="companyName"
+                                    (input)="searchCompany(searchInput.value)"
+                                    [disabled]="mapParamaters.companyOrSector === 'Sector'" />
+
+                                <button type="button" class="btn btn-info"
+                                    [disabled]="mapParamaters.companyOrSector === 'Sector'" (click)="add2List()">
+                                    Add
+                                </button>
+                            </div>
+                            <div class="mb-3">
+                                <ul class="search-result ">
+                                    <li *ngFor="let company of companies$">
+                                        <a (click)="choseCompany(company.companyName)">{{company.companyName}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="list-group list-group-flush" *ngIf="companyList.length">
+                                    <li class="list-group-item" *ngFor="let company of companyList; index as i;">
+                                        {{i+1}} - {{company}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="input-group mt-3 mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        From Period &nbsp; &nbsp;
+                                        <fa-icon [icon]="faCalendarTimes" size="lg"></fa-icon>
+                                    </span>
+                                </div>
+                                <input type="text" placeholder="Datepicker" class="form-control" name="dateStart"
+                                    [(ngModel)]="mapParamaters.dateStart" bsDatepicker />
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">To Period &nbsp; &nbsp;
+                                        <fa-icon [icon]="faCalendarTimes" size="lg"></fa-icon>
+                                    </span>
+                                </div>
+                                <input type="text" placeholder="Datepicker" class="form-control" name="dateTo"
+                                    [(ngModel)]="mapParamaters.dateTo" bsDatepicker />
+                            </div>
+
+                            <button type="submit" class="btn btn-success" [disabled]="!compareForm.form.valid">Generate
+                                Map</button>
+                            <button type="reset" class="btn btn-danger ml-2" (click)="onReset()">Reset</button>
+                        </form>
+                        <compare-charts [chartType]="chartType" [chartData]="chartData" *ngSwitchCase="false">
+                        </compare-charts>
+                        <button type="button" class="btn btn-secondary btn-lg btn-block" (click)=switchView()
+                            *ngSwitchCase="false">Back</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

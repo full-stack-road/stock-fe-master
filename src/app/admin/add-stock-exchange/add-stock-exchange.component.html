@@ -1,0 +1,47 @@
+<div class="card shadow">
+    <p class="h4 card-header">Add New Stock Exchange</p>
+    <div class="card-body bg-light">
+        <p class="card-text h6">Please fill the details:</p>
+        <form [formGroup]="addStockExchangeForm" (ngSubmit)="onSubmit()">
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Stock Exchange Name</span>
+                </div>
+                <input type="text" formControlName="stockExchangesId" class="form-control" />
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">About SE</span>
+                </div>
+                <textarea class="form-control" formControlName="stockExchangeBrief" aria-label="With textarea"></textarea>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Address</span>
+                </div>
+                <textarea class="form-control" formControlName="contactAddress" aria-label="With textarea"></textarea>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Contact Number</span>
+                </div>
+                <input type="text" formControlName="contactNumber" class="form-control" />
+            </div>
+            <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Remarks</span>
+                    </div>
+                    <textarea class="form-control" formControlName="remarks" aria-label="With textarea"></textarea>
+                </div>
+            <div class="d-flex no-gutters">
+                <div class="col">
+                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                </div>
+                <div>
+                    <button (click)="backClicked()" class="btn btn-secondary">Back</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

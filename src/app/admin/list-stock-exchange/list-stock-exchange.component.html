@@ -1,0 +1,45 @@
+<html>
+    <head>
+    <style>
+  
+
+    </style>
+</head>
+<div class="qw">
+
+<div class="card shadow">
+    <p class="h4 card-header">List of Stock Exchanges</p>
+    <div class="card-body bg-light">
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+        <table class="table table-borderless table-hover">
+            <thead>
+                <tr class="">
+                    <th scope="col">Stock Exchange Name</th>
+                    <th scope="col">About SE</th>
+                    <th scope="col">Contact Address</th>
+                    <th scope="col">Remarks</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                    <div class="firefly"></div>
+                    <div class="firefly"></div>
+                    <div class="firefly"></div>
+                    <div class="firefly"></div>
+                    <tr *ngFor="let result of results">
+                        <td>{{ result.stockExchangesId }}</td>
+                        <td>{{ result.stockExchangeBrief }}</td>
+                        <td>{{ result.contactAddress }}</td>
+                        <td>{{ result.remarks  }}</td>
+                        <!-- <td><a (click)="updateCompany(result.companyCode)" class="btn btn-primary" role="button">Update</a></td> -->
+                    </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</div>
+</html>

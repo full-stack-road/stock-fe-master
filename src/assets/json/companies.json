@@ -1,0 +1,54 @@
+[
+    {
+        "companyCode": "100001",
+        "companyName": "QQ",
+        "turnover": 10000.00,
+        "CEO": "Rex",
+        "directors": [
+            "Rex",
+            "Daniel"
+        ],
+        "stockExchangesId": "NSC",
+        "sectorName": "Sports",
+        "brief": "comments"
+    },
+    {
+        "companyCode": "100002",
+        "companyName": "HP",
+        "turnover": 10000.00,
+        "CEO": "Rex",
+        "directors": [
+            "Rex",
+            "Daniel"
+        ],
+        "stockExchangesId": "NSC",
+        "sectorName": "Sports",
+        "brief": "comments"
+    },
+    {
+        "companyCode": "100002",
+        "companyName": "IBM",
+        "turnover": 10000.00,
+        "CEO": "Rex",
+        "directors": [
+            "Rex",
+            "Daniel"
+        ],
+        "stockExchangesId": "NSC",
+        "sectorName": "Sports",
+        "brief": "comments"
+    },
+    {
+        "companyCode": "100002",
+        "companyName": "Alibaba",
+        "turnover": 10000.00,
+        "CEO": "Rex",
+        "directors": [
+            "Rex",
+            "Daniel"
+        ],
+        "stockExchangesId": "NSC",
+        "sectorName": "Sports",
+        "brief": "comments"
+    }
+]

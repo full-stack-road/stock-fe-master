@@ -1,0 +1,105 @@
+<div class="card shadow">
+    <p class="h4 card-header">Add New Company</p>
+    <div class="card-body bg-light">
+        <p class="card-text h6">Please fill the details:</p>
+        <form [formGroup]="addCompanyForm" (ngSubmit)="onSubmit()">
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Company Stock Code</span>
+                </div>
+                <input type="text" formControlName="companyCode" class="form-control" />
+             </div>
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Company Name</span>
+                </div>
+                <input type="text" formControlName="companyName" class="form-control" />
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <input type="text" formControlName="city" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputState">State</label>
+                  <select id="inputState" formControlName="state" class="form-control">
+                    <option selected>Noida</option>
+                    
+            <option>Gurgaon</option>
+            <option>Hyderabad</option>
+            <option>Chennai</option>
+            <option>Pune</option>
+            <option>Bangalore</option>
+            <option>Kolkata</option>
+            <option>Indore</option>
+            <option>Mumbai</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputZip">Zip</label>
+                  <input type="text" formControlName="zip" class="form-control" id="inputZip">
+                </div>
+              </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> Turnover in Rs.</span>
+                </div>
+                <input type="number" formControlName="turnover" class="form-control">
+                <div class="input-group-append">
+                    <span class="input-group-text">.00</span>
+                </div>
+            </div>
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">CEO</span>
+                </div>
+                <input type="text" formControlName="ceo" class="form-control" />
+            </div>
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Board of Director</span>
+                </div>
+                <input type="text" formControlName="directors" class="form-control" />
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">About Company</span>
+                </div>
+                <textarea class="form-control" formControlName="brief" aria-label="With textarea"></textarea>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" formControlName="stockExchangesId" id="inputGroupSelect01">
+                    <option selected>Choose Stock Exchange...</option>
+                    <option value="BSE">BSE</option>
+                    <option value="NES">NSE</option>
+                    <option value="NASDAQ">NASDAQ</option>
+                    <option value="NYSE">NYSE</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect02">Options</label>
+                </div>
+                <select class="custom-select" formControlName="sectorName" id="inputGroupSelect02">
+                    <option selected>Choose Sector...</option>
+                    <option value="IT">IT</option>
+                    <option value="Infotainment">Infotainment</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Real-Estate">Real-Estate</option>
+                </select>
+            </div>
+            <div class="d-flex no-gutters">
+                <div class="col">
+                    <button type="submit" class="btn btn-success">Add</button>
+                    <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                </div>
+                <div>
+                    <button (click)="backClicked()" class="btn btn-secondary">Back</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

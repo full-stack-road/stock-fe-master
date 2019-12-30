@@ -1,0 +1,69 @@
+<div class="card shadow">
+        <p class="h4 card-header">Update IPO</p>
+        <div class="card-body bg-light">
+            <p class="card-text h6">Please fill the details:</p>
+            <form [formGroup]="updateIpoForm" (ngSubmit)="onSubmit()">
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">IPO ID</span>
+                </div>
+                <input type="text" formControlName="ipoId" class="form-control" />
+            </div>
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Company Stock Code</span>
+                </div>
+                <input type="text" formControlName="companyCode" class="form-control" />
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" formControlName="stockExchangesId" id="inputGroupSelect01">
+                    <option selected>Choose Stock Exchange...</option>
+                    <option value="BSE">BSE</option>
+                    <option value="NSE">NSE</option>
+                    <option value="NASDAQ">NASDAQ</option>
+                    <option value="NYSE">NYSE</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> Price/Share in Rs.</span>
+                </div>
+                <input type="text" formControlName="sharePrice" class="form-control">
+                <div class="input-group-append">
+                    <span class="input-group-text">.00</span>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Total no. of Shares</span>
+                </div>
+                <input type="text" formControlName="sharesNum" class="form-control" />
+            </div>
+            
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Open date time</span>
+                </div>
+                <input type="date" formControlName="openDateTime" class="form-control" />
+            </div>
+            <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Remarks</span>
+                    </div>
+                    <textarea class="form-control" formControlName="remarks" aria-label="With textarea"></textarea>
+                </div>
+            <div class="d-flex no-gutters">
+                <div class="col">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                </div>
+                <div>
+                    <button (click)="backClicked()" class="btn btn-secondary">Back</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>

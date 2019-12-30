@@ -1,0 +1,32 @@
+
+<div class="card shadow">
+    <p class="h4 card-header">List of IPOs</p>
+    <div class="card-body bg-light">
+            <table class="table table-borderless table-hover">
+                    <thead>
+                        <tr class="">
+                            <th scope="col">IPO ID</th>
+                            <th scope="col">Company Stock Code</th>
+                            <th scope="col">Stock Exchanges</th>
+                            <th scope="col">Price/Share in Rs.</th>
+                            <th scope="col">Total no.of Shares</th>
+                            <th scope="col">Open date time</th>
+                            <th scope="col">Remarks</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let result of results">
+                            <td>{{ result.ipoId }}</td>
+                            <td>{{ result.companyCode }}</td>
+                            <td>{{ result.stockExchangesId }}</td>
+                            <td>{{ result.sharePrice  }}</td>
+                            <td>{{ result.sharesNum }}</td>
+                            <td>{{ result.openDateTime }}</td>
+                            <td>{{ result.remarks }}</td>
+                            <td><a (click)="updateIPO(result)" class="btn btn-primary" role="button">Update</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+    </div>
+</div>

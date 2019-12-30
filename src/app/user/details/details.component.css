@@ -1,0 +1,14 @@
+.userHead {
+  font-weight: 600;
+  font-style: italic;
+  font-size: large;
+  line-height: 27px;
+}
+.userP {
+  line-height: 27px;
+}
+
+.userImage {
+  width: 150px;
+  height: 150px;
+}
